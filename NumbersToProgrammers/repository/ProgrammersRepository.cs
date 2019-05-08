@@ -113,7 +113,35 @@ namespace ProgrammersProjekt.repository
                 throw new RepositoryException(id + " sorszámú elem nem módosítható\n");
             programmerToModify.modifyProgrammer(toProgrammer);
         }
+        /// <summary>
+        /// Programozók száma
+        /// </summary>
+        /// <returns>A listában lévő programozók száma</returns>
+        /// <exception cref="RepositoryException">A programozók száma nem számolható</exception>
+        public int getCoutOfProgrammer()
+        {
+            int count = programmers.Count();
+            return count;
+        }
 
+        /// <summary>
+        /// Új id generálása
+        /// </summary>
+        /// <returns>Az új id</returns>
+        public int getNewId()
+        {
+            int maxId = -1;
+            foreach (Programmer p in programmers)
+            {
+                if (p.getId() > maxId)
+                {
+                    maxId = p.getId();
+                }
+            }
+            if (maxId == -1)
+                maxId = 0;
+            return maxId + 1;
+        }
 
     }
 }
