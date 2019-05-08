@@ -84,5 +84,36 @@ namespace ProgrammersProjekt.repository
                 throw new RepositoryException(id + " sorszámú elem nem törölhető.\n" + e.Message);
             }
         }
+
+        /// <summary>
+        /// Id alapján megkeres egy programozót
+        /// </summary>
+        /// <param name="programmerID"></param>
+        /// <returns></returns>
+        public Programmer getProgrammerById(int programmerID)
+        {
+            if (programmers.FindIndex(p => p.getId() == programmerID) < 0)
+                return null;
+            else
+                return programmers.Find(d => d.getId() == programmerID);
+        }
+
+        /// <summary>
+        /// Adott id-jű elem módosítása
+        /// </summary>
+        /// <param name="id">A módosítandó programozó id-je</param>
+        /// <param name="toProgrammer">Erre az adatra módosul</param>
+        /// <exception cref="RepositoryException">Adott id-jű elem nem létezik a listában</exception>
+        public void modify(int id, Programmer toProgrammer)
+        {
+            if (toProgrammer == null)
+                throw new RepositoryException("Null értékre nem lehet módosítani\n");
+            Programmer programmerToModify = getProgrammerById(id);
+            if (programmerToModify == null)
+                throw new RepositoryException(id + " sorszámú elem nem módosítható\n");
+            programmerToModify.modifyProgrammer(toProgrammer);
+        }
+
+
     }
 }
