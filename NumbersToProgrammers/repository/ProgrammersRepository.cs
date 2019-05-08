@@ -45,5 +45,15 @@ namespace ProgrammersProjekt.repository
             programmers = pim.getProgrammersStoredInMemory();
             return pim.getProgrammersStoredInMemory();
         }
+
+        /// <summary>
+        /// Id alapján megkeres egy programozó sorszámát a listában
+        /// </summary>
+        /// <param name="programmerID"></param>
+        /// <returns></returns>
+        private int searchProgrammerIndex(int programmerID)
+        {
+            return programmers.FindIndex(p => p.getId() == programmerID);
+        }
     }
 }
