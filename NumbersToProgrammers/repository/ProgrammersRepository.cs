@@ -55,5 +55,34 @@ namespace ProgrammersProjekt.repository
         {
             return programmers.FindIndex(p => p.getId() == programmerID);
         }
+
+        /// <summary>
+        /// Programozó hozzáadása a listához
+        /// </summary>
+        /// <param name="programmer">A programozó</param>
+        public void add(Programmer programmer)
+        {
+            if (programmer == null)
+                throw new RepositoryException("A programozó nem jött létre a memóriában, nem lehet hozzáadni a listához");
+            programmers.Add(programmer);
+        }
+
+        /// <summary>
+        /// Adott id-jű elem törlése a listában
+        /// </summary>
+        /// <param name="id">Az id</param>
+        /// <exception cref="RepositoryException">Adott sorszámú elem nem létezik a listában</exception>
+        public void remove(int id)
+        {
+            int index = searchProgrammerIndex(id);
+            try
+            {
+                programmers.RemoveAt(index);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                throw new RepositoryException(id + " sorszámú elem nem törölhető.\n" + e.Message);
+            }
+        }
     }
 }
