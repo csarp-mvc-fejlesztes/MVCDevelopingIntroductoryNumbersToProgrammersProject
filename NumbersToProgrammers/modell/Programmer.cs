@@ -143,7 +143,7 @@ namespace ProgrammersProjekt.modell
             if (gameProgrammer)
                 programmerString += "játékprogramírás ";
             return programmerString;
-        }
+        }        
 
         /// <summary>
         /// Statikus függvény
@@ -161,6 +161,18 @@ namespace ProgrammersProjekt.modell
                 return data[0];
             else
                 return string.Empty;
+        }
+
+        public void modifyProgrammer(Programmer newDataOfProgrammer)
+        {
+            id = newDataOfProgrammer.getId();
+            name = newDataOfProgrammer.getName();
+            age = newDataOfProgrammer.getAge();
+            city = newDataOfProgrammer.getCity();
+            gender = newDataOfProgrammer.getGender();
+            desktopProgrammer = newDataOfProgrammer.getDesktopProgrammerProperties();
+            webProgrammer = newDataOfProgrammer.getWebProgrammerProperties();
+            gameProgrammer = newDataOfProgrammer.getGameProgrammerProperties();
         }
     }
 }
