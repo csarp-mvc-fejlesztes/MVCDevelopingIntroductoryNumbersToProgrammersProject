@@ -50,5 +50,79 @@ namespace ProgrammersProjekt.modell
             this.webProgrammer = webProgrammer;
             this.gameProgrammer = gameProgrammer;
         }
+
+        public void setID(int id)
+        {
+            this.id = id;
+        }
+
+        public void setName(string name)
+        {
+            this.name = name;
+        }
+
+        public void setAge(int age)
+        {
+            this.age = age;
+        }
+
+        public void setMan()
+        {
+            gender = Gender.MAN;
+        }
+
+        public void setWoman()
+        {
+            gender = Gender.WOMAN;
+        }
+
+        public void changeDesktopProgrammerProperies()
+        {
+            desktopProgrammer = !desktopProgrammer;
+        }
+
+        public void changeWebProgrammerProperties()
+        {
+            webProgrammer = !webProgrammer;
+        }
+
+        public void changeGameProgrammerProperties()
+        {
+            gameProgrammer = !gameProgrammer;
+        }
+
+        public int getId()
+        {
+            return id;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+        public int getAge()
+        {
+            return age;
+        }
+        public string getCity()
+        {
+            return city;
+        }
+        public Gender getGender()
+        {
+            return gender;
+        }
+        public bool getDesktopProgrammerProperties()
+        {
+            return desktopProgrammer;
+        }
+        public bool getWebProgrammerProperties()
+        {
+            return webProgrammer;
+        }
+        public bool getGameProgrammerProperties()
+        {
+            return gameProgrammer;
+        }
     }
 }
