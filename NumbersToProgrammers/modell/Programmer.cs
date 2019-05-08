@@ -144,5 +144,23 @@ namespace ProgrammersProjekt.modell
                 programmerString += "játékprogramírás ";
             return programmerString;
         }
+
+        /// <summary>
+        /// Statikus függvény
+        /// Használata: Programmer.getIdFromProgrammerString(string)
+        /// 
+        /// Feltételezi, hogy a string elején, az első szóközig a programozó ID-je van
+        /// Ezt az id-t adja vissza
+        /// </summary>
+        /// <param name="programmerText">Programozó id-je string formátumban</param>
+        /// <returns></returns>
+        public static string getIdFromProgrammerString(string programmerText)
+        {
+            string[] data = programmerText.Split(' ');
+            if (data.Length > 0)
+                return data[0];
+            else
+                return string.Empty;
+        }
     }
 }
