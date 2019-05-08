@@ -124,5 +124,25 @@ namespace ProgrammersProjekt.modell
         {
             return gameProgrammer;
         }
+
+        public override string ToString()
+        {
+            string programmerString =
+                id + " " +
+                name + " " +
+                age + " " +
+                city + " ";
+            if (gender == Gender.MAN)
+                programmerString += "férfi ";
+            else
+                programmerString += "nő ";
+            if (desktopProgrammer)
+                programmerString += "programozás ";
+            if (webProgrammer)
+                programmerString += "webfejlesztés ";
+            if (gameProgrammer)
+                programmerString += "játékprogramírás ";
+            return programmerString;
+        }
     }
 }
