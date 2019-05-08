@@ -34,5 +34,16 @@ namespace ProgrammersProjekt.repository
         {
             return programmers;
         }
+
+        /// <summary>
+        /// Feltöltés memóriában lévő tesztadatokkal
+        /// </summary>
+        /// <returns>Memóriában tárolt tesztadatok, programozók listája</returns>
+        public List<Programmer> getProgrammersStoredInMemory()
+        {
+            ProgrammersInMemory pim = new ProgrammersInMemory();
+            programmers = pim.getProgrammersStoredInMemory();
+            return pim.getProgrammersStoredInMemory();
+        }
     }
 }
