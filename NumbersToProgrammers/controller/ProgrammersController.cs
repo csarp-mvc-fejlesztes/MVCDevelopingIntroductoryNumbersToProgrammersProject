@@ -50,5 +50,22 @@ namespace ProgrammersProjekt.controller
             return programmersString;
         }
 
+        /// <summary>
+        /// Output átalakítás:
+        ///  - a programozók aktuális listájából stringek listáját készíti el
+        /// </summary>
+        /// <returns>Programozók listája</returns>
+        public List<string> getProgrammers()
+        {
+            //Kapcsolat az adattár akutálisan tárolt adataihoz
+            List<Programmer> programers = programmerRepository.getProgrammers();
+            List<string> programmersString = new List<string>();
+            foreach (Programmer p in programers)
+            {
+                programmersString.Add(p.ToString());
+            }
+            return programmersString;
+        }
+
     }
 }
