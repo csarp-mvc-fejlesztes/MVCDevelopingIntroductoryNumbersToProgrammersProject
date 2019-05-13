@@ -134,5 +134,36 @@ namespace ProgrammersProjekt.controller
                 return p;
         }
 
+        /// <summary>
+        /// Adott id-jú adat törlése id alapján a repository segítségével
+        /// </summary>
+        /// <param name="idOfProgrammerToDelete">Annak az elemnek a id-je amelyet törölni kell (string alakban)</param>
+        public void deleteProgrammer(string idOfProgrammerToDelete)
+        {
+
+            int id = -1;
+            try
+            {
+                id = getProgrammerId(idOfProgrammerToDelete);
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
+            try
+            {
+                programmerRepository.remove(id);
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine(re.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
+        }
+
     }
 }
