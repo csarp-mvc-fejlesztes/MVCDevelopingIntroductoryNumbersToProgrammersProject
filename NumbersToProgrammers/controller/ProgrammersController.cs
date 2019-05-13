@@ -107,7 +107,32 @@ namespace ProgrammersProjekt.controller
             return id;
         }
 
+        /// <summary>
+        /// Programozó egy adott id alapján
+        /// </summary>
+        /// <param name="idString">Programozó id-je string alakban</param>
+        /// <returns>Programozó objektum</returns>
+        public Programmer getProgrammerById(string idString)
+        {
+            int id = -1;
+            try
+            {
+                id = getProgrammerId(idString);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
 
+            Programmer p = programmerRepository.getProgrammerById(id);
+            if (p == null)
+            {
+                Debug.WriteLine(idString + " azonosító alapján a programozó meghatározhatatlan...");
+                return null;
+            }
+            else
+                return p;
+        }
 
     }
 }
