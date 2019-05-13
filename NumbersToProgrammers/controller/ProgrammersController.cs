@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using ProgrammersProjekt.modell;
 using ProgrammersProjekt.repository;
+using System.Diagnostics;
 
 namespace ProgrammersProjekt.controller
 {
@@ -81,6 +82,32 @@ namespace ProgrammersProjekt.controller
             }
             return cities.ToList();
         }
+
+        /// <summary>
+        /// Belső metódus, amelyet több másik metódus is használ
+        /// A programozó id-jét string adatból int adattá konvertálja
+        /// </summary>
+        /// <param name="idString">Programozó id-je string formátumban</param>
+        /// <returns>Programozó id-je int formátumban</returns>
+        private int getProgrammerId(string idString)
+        {
+            int id = -1;
+            try
+            {
+                id = Convert.ToInt32(idString);
+            }
+            catch (FormatException fe)
+            {
+                Debug.WriteLine(idString + " azonosító nem megfelelő formátumú...");
+            }
+            catch (OverflowException oe)
+            {
+                Debug.WriteLine(idString + " azonosító túl nagy vagy túl kicsi...");
+            }
+            return id;
+        }
+
+
 
     }
 }
