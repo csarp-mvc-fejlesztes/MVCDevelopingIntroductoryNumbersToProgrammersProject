@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ProgrammersProjekt.modell;
 using ProgrammersProjekt.repository;
 
 namespace ProgrammersProjekt.controller
@@ -30,6 +31,23 @@ namespace ProgrammersProjekt.controller
         {
             //A repository réteget képviselő osztály példányosítása
             programmerRepository = new ProgrammersRepository();
+        }
+
+        /// <summary>
+        /// Output átalakítás:
+        ///  - a programozók memóriában tárolt listájából stringek listáját készíti el
+        /// </summary>
+        /// <returns>Programozók listája</returns>
+        public List<string> getProgrammersFromMemory()
+        {
+            //Kapcsolat az adattár tárolt adataihoz
+            List<Programmer> programmersStoredInMemory = programmerRepository.getProgrammersStoredInMemory();
+            List<string> programmersString = new List<string>();
+            foreach (Programmer p in programmersStoredInMemory)
+            {
+                programmersString.Add(p.ToString());
+            }
+            return programmersString;
         }
 
     }
