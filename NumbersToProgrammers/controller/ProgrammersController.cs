@@ -230,5 +230,81 @@ namespace ProgrammersProjekt.controller
                 Debug.WriteLine("Hiba történt...\n" + ex.Message);
             }
         }
+
+        /// <summary>
+        /// A viewn megadott adatot a repository segítségével módosítja
+        /// </summary>
+        /// <param name="stringIdOfModifydProgrammer">A sorszám, amely megadja, hogy hanyadik elemet kell változtatni</param>
+        /// <param name="name">A programozó neve</param>
+        /// <param name="ageText">A programozó életkora</param>
+        /// <param name="city">A programozó lakhelye</param>
+        /// <param name="gender">A programozó neme</param>
+        /// <param name="deskopProgrammer">Desktop programozó tulajdonság</param>
+        /// <param name="webProgrammer">Web programozó tulajdonság</param>
+        /// <param name="gameProgrammer">Játékprogramozó tualjdonság</param>
+        ///  /// <exception cref="ControllerException">ageText + " évszám nem megfelelő formátumú...</exception>
+        /// <exception cref="ControllerException">ageText + " évszám túl nagy vagy túl kicsi</exception>
+
+        public void modifyProgrammer(
+            string stringIdOfModifydProgrammer,
+            string name,
+            string ageText,
+            string city,
+            bool gender,
+            bool desktopProgrammer,
+            bool webProgrammer,
+            bool gameProgrammer
+        )
+        {
+            int idOfModifydProgrammer = -1;
+            try
+            {
+                idOfModifydProgrammer = getProgrammerId(stringIdOfModifydProgrammer);
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+            Gender genderProperties = Gender.MAN;
+            if (gender == false)
+                genderProperties = Gender.WOMAN;
+
+            int age = 0;
+            try
+            {
+                age = Convert.ToInt32(ageText);
+                Programmer p = new Programmer(
+                    idOfModifydProgrammer,
+                    name,
+                    age,
+                    city,
+                    genderProperties,
+                    desktopProgrammer,
+                    webProgrammer,
+                    gameProgrammer
+                );
+                programmerRepository.modify(idOfModifydProgrammer, p);
+            }
+            catch (FormatException fe)
+            {
+                throw new ControllerException(ageText + " évszám nem megfelelő formátumú...");
+            }
+            catch (OverflowException oe)
+            {
+                throw new ControllerException(ageText + " évszám túl nagy vagy túl kicsi");
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine("Adattár rétegbeli hiba történt...\n" + re.Message);
+            }
+            catch (ModelException me)
+            {
+                Debug.WriteLine("Modell rétegbeli hiba történt...\n" + me.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
+        }
     }
 }
