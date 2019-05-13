@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\ControllerException.cs" />
     <Compile Include="controller\ProgrammersController.cs" />
     <Compile Include="modell\ModelException.cs" />
     <Compile Include="modell\Programmer.cs" />
