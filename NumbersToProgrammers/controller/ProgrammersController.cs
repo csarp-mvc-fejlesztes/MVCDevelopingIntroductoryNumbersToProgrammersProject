@@ -165,5 +165,70 @@ namespace ProgrammersProjekt.controller
             }
         }
 
+        /// <summary>
+        /// Input átalakítások:
+        /// A viewn megadott adatokat konvertálja objektummá és a reposiotry segitségével eltárolja
+        /// </summary>
+        /// <param name="name">A programozó neve</param>
+        /// <param name="ageText">A programozó életkora</param>
+        /// <param name="city">A programozó lakhelye</param>
+        /// <param name="gender">A programozó neme</param>
+        /// <param name="deskopProgrammer">Desktop programozó tulajdonság</param>
+        /// <param name="webProgrammer">Web programozó tulajdonság</param>
+        /// <param name="gameProgrammer">Játékprogramozó tualjdonság</param>
+        /// <exception cref="ControllerException">ageText + " évszám nem megfelelő formátumú...</exception>
+        /// <exception cref="ControllerException">ageText + " évszám túl nagy vagy túl kicsi</exception>
+        public void addProgrammer(
+            string name,
+            string ageText,
+            string city,
+            bool gender,
+            bool desktopProgrammer,
+            bool webProgrammer,
+            bool gameProgrammer
+        )
+        {
+            Gender genderProperties = Gender.MAN;
+            if (gender == false)
+                genderProperties = Gender.WOMAN;
+
+            int age = 0;
+            try
+            {
+                age = Convert.ToInt32(ageText);
+                int newId = programmerRepository.getNewId();
+                Programmer p = new Programmer(
+                    newId,
+                    name,
+                    age,
+                    city,
+                    genderProperties,
+                    desktopProgrammer,
+                    webProgrammer,
+                    gameProgrammer
+                );
+                programmerRepository.add(p);
+            }
+            catch (FormatException fe)
+            {
+                throw new ControllerException(ageText + " évszám nem megfelelő formátumú...");
+            }
+            catch (OverflowException oe)
+            {
+                throw new ControllerException(ageText + " évszám túl nagy vagy túl kicsi");
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine("Adattár rétegbeli hiba történt...\n" + re.Message);
+            }
+            catch (ModelException me)
+            {
+                Debug.WriteLine("Modell rétegbeli hiba történt...\n" + me.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Hiba történt...\n" + ex.Message);
+            }
+        }
     }
 }
