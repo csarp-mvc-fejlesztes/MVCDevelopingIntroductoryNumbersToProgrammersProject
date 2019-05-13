@@ -67,5 +67,20 @@ namespace ProgrammersProjekt.controller
             return programmersString;
         }
 
+        /// <summary>
+        /// Output átalakítás:
+        /// - a programozók aktuális listájából városnevek listáját készíti el
+        /// </summary>
+        /// <returns>Városnevek listája</returns>
+        public List<string> getCities()
+        {
+            SortedSet<string> cities = new SortedSet<string>();
+            foreach (Programmer p in programmerRepository.getProgrammers())
+            {
+                cities.Add(p.getCity());
+            }
+            return cities.ToList();
+        }
+
     }
 }
