@@ -306,5 +306,26 @@ namespace ProgrammersProjekt.controller
                 Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
             }
         }
+
+        /// <summary>
+        /// Programozók száma
+        /// </summary>
+        /// <returns>Programozók száma string formátumban</returns>
+        public string computeNumberOfData()
+        {
+            try
+            {
+                return programmerRepository.getCoutOfProgrammer().ToString();
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine(re.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
+            return "";
+        }
     }
 }
