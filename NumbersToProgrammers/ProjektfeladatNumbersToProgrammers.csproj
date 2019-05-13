@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\ControllerException.cs" />
+    <Compile Include="controller\ProgrammersController.cs" />
     <Compile Include="modell\ModelException.cs" />
     <Compile Include="modell\Programmer.cs" />
     <Compile Include="modell\ProgrammersInMemory.cs" />
@@ -102,8 +104,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
