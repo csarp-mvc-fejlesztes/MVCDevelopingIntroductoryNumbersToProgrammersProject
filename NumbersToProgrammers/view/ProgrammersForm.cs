@@ -112,5 +112,46 @@ namespace ProgrammersProjekt
             programmersController.deleteProgrammer(idText);
             updateControlerWithData();
         }
+
+        /// <summary>
+        /// Programozó adatainak megjelenítése a vezérlőkben
+        /// </summary>
+        /// <param name="p">Megjelenítendő programozó</param>
+        private void showProgrammerInController(Programmer p)
+        {
+            if (p == null)
+            {
+                clearProgrammerController();
+            }
+            else
+            {
+                textBoxId.Text = p.getId().ToString();
+                textBoxName.Text = p.getName();
+                textBoxAge.Text = p.getAge().ToString();
+                comboBoxCity.Text = p.getCity();
+                if (p.getGender() == Gender.MAN)
+                {
+                    radioButtonMan.Checked = true;
+                    radioButtonWoman.Checked = false;
+                }
+                else
+                {
+                    radioButtonMan.Checked = false;
+                    radioButtonWoman.Checked = true;
+                }
+                if (p.getDesktopProgrammerProperties())
+                    checkBoxDesktopProgrammer.Checked = true;
+                else
+                    checkBoxDesktopProgrammer.Checked = false;
+                if (p.getGameProgrammerProperties())
+                    checkBoxGameProgrammer.Checked = true;
+                else
+                    checkBoxGameProgrammer.Checked = false;
+                if (p.getWebProgrammerProperties())
+                    checkBoxWebProgrammer.Checked = true;
+                else
+                    checkBoxWebProgrammer.Checked = false;
+            }
+        }
     }
 }
