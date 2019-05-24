@@ -366,6 +366,7 @@
             this.ToolStripMenuItemDataFromMemory.Name = "ToolStripMenuItemDataFromMemory";
             this.ToolStripMenuItemDataFromMemory.Size = new System.Drawing.Size(157, 20);
             this.ToolStripMenuItemDataFromMemory.Text = "Memóriában tárolt adatok";
+            this.ToolStripMenuItemDataFromMemory.Click += new System.EventHandler(this.ToolStripMenuItemDataFromMemory_Click);
             // 
             // ToolStripMenuItemDataFromDatabase
             // 

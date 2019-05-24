@@ -85,5 +85,14 @@ namespace ProgrammersProjekt
             programmersController.getProgrammersFromMemory();
             updateControlerWithData();
         }
+
+        /// <summary>
+        /// Tesztadatok betöltés és megjelenítése
+        /// </summary>
+        private void ToolStripMenuItemDataFromMemory_Click(object sender, EventArgs e)
+        {
+            programmersController.getProgrammersFromMemory();
+            updateControlerWithData();
+        }
     }
 }
