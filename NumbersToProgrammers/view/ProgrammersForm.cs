@@ -30,6 +30,11 @@ namespace ProgrammersProjekt
             this.Close();
         }
 
-        
+        private void ToolStripMenuItemInformation_Click(object sender, EventArgs e)
+        {
+            AboutBoxProjektfeladat abp = new AboutBoxProjektfeladat();
+            if (abp.ShowDialog() == DialogResult.OK)
+                return;
+        }
     }
 }

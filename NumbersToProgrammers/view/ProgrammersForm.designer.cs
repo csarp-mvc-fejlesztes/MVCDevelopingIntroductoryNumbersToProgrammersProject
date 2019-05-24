@@ -73,7 +73,7 @@
             this.labelNev.AutoSize = true;
             this.labelNev.Location = new System.Drawing.Point(6, 39);
             this.labelNev.Name = "labelNev";
-            this.labelNev.Size = new System.Drawing.Size(28, 15);
+            this.labelNev.Size = new System.Drawing.Size(27, 13);
             this.labelNev.TabIndex = 0;
             this.labelNev.Text = "Név";
             // 
@@ -82,7 +82,7 @@
             this.labelEletkor.AutoSize = true;
             this.labelEletkor.Location = new System.Drawing.Point(7, 66);
             this.labelEletkor.Name = "labelEletkor";
-            this.labelEletkor.Size = new System.Drawing.Size(45, 15);
+            this.labelEletkor.Size = new System.Drawing.Size(40, 13);
             this.labelEletkor.TabIndex = 1;
             this.labelEletkor.Text = "Életkor";
             // 
@@ -132,7 +132,7 @@
             this.labelVaros.AutoSize = true;
             this.labelVaros.Location = new System.Drawing.Point(6, 92);
             this.labelVaros.Name = "labelVaros";
-            this.labelVaros.Size = new System.Drawing.Size(51, 15);
+            this.labelVaros.Size = new System.Drawing.Size(45, 13);
             this.labelVaros.TabIndex = 10;
             this.labelVaros.Text = "Helység";
             // 
@@ -158,7 +158,7 @@
             this.radioButtonMan.AutoSize = true;
             this.radioButtonMan.Location = new System.Drawing.Point(79, 119);
             this.radioButtonMan.Name = "radioButtonMan";
-            this.radioButtonMan.Size = new System.Drawing.Size(45, 19);
+            this.radioButtonMan.Size = new System.Drawing.Size(42, 17);
             this.radioButtonMan.TabIndex = 5;
             this.radioButtonMan.TabStop = true;
             this.radioButtonMan.Text = "férfi";
@@ -169,7 +169,7 @@
             this.radioButtonWoman.AutoSize = true;
             this.radioButtonWoman.Location = new System.Drawing.Point(151, 119);
             this.radioButtonWoman.Name = "radioButtonWoman";
-            this.radioButtonWoman.Size = new System.Drawing.Size(39, 19);
+            this.radioButtonWoman.Size = new System.Drawing.Size(37, 17);
             this.radioButtonWoman.TabIndex = 6;
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "nő";
@@ -180,7 +180,7 @@
             this.labelNem.AutoSize = true;
             this.labelNem.Location = new System.Drawing.Point(6, 119);
             this.labelNem.Name = "labelNem";
-            this.labelNem.Size = new System.Drawing.Size(34, 15);
+            this.labelNem.Size = new System.Drawing.Size(29, 13);
             this.labelNem.TabIndex = 4;
             this.labelNem.Text = "Nem";
             // 
@@ -189,7 +189,7 @@
             this.labelHobi.AutoSize = true;
             this.labelHobi.Location = new System.Drawing.Point(7, 145);
             this.labelHobi.Name = "labelHobi";
-            this.labelHobi.Size = new System.Drawing.Size(64, 15);
+            this.labelHobi.Size = new System.Drawing.Size(57, 13);
             this.labelHobi.TabIndex = 17;
             this.labelHobi.Text = "Szaktudás";
             // 
@@ -198,7 +198,7 @@
             this.checkBoxDesktopProgrammer.AutoSize = true;
             this.checkBoxDesktopProgrammer.Location = new System.Drawing.Point(49, 161);
             this.checkBoxDesktopProgrammer.Name = "checkBoxDesktopProgrammer";
-            this.checkBoxDesktopProgrammer.Size = new System.Drawing.Size(99, 19);
+            this.checkBoxDesktopProgrammer.Size = new System.Drawing.Size(86, 17);
             this.checkBoxDesktopProgrammer.TabIndex = 7;
             this.checkBoxDesktopProgrammer.Text = "programozás";
             this.checkBoxDesktopProgrammer.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@
             this.checkBoxWebProgrammer.AutoSize = true;
             this.checkBoxWebProgrammer.Location = new System.Drawing.Point(49, 184);
             this.checkBoxWebProgrammer.Name = "checkBoxWebProgrammer";
-            this.checkBoxWebProgrammer.Size = new System.Drawing.Size(100, 19);
+            this.checkBoxWebProgrammer.Size = new System.Drawing.Size(89, 17);
             this.checkBoxWebProgrammer.TabIndex = 8;
             this.checkBoxWebProgrammer.Text = "webfejlesztés";
             this.checkBoxWebProgrammer.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.checkBoxGameProgrammer.AutoSize = true;
             this.checkBoxGameProgrammer.Location = new System.Drawing.Point(49, 207);
             this.checkBoxGameProgrammer.Name = "checkBoxGameProgrammer";
-            this.checkBoxGameProgrammer.Size = new System.Drawing.Size(122, 19);
+            this.checkBoxGameProgrammer.Size = new System.Drawing.Size(108, 17);
             this.checkBoxGameProgrammer.TabIndex = 9;
             this.checkBoxGameProgrammer.Text = "jatékprogram írás";
             this.checkBoxGameProgrammer.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             this.labelAzonosito.AutoSize = true;
             this.labelAzonosito.Location = new System.Drawing.Point(6, 16);
             this.labelAzonosito.Name = "labelAzonosito";
-            this.labelAzonosito.Size = new System.Drawing.Size(60, 15);
+            this.labelAzonosito.Size = new System.Drawing.Size(55, 13);
             this.labelAzonosito.TabIndex = 22;
             this.labelAzonosito.Text = "Azonosító";
             // 
@@ -355,32 +355,33 @@
             this.ToolStripMenuItemExit});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1008, 27);
+            this.menuStrip.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip.TabIndex = 28;
             this.menuStrip.Text = "menuStrip1";
             // 
             // ToolStripMenuItemDataFromMemory
             // 
             this.ToolStripMenuItemDataFromMemory.Name = "ToolStripMenuItemDataFromMemory";
-            this.ToolStripMenuItemDataFromMemory.Size = new System.Drawing.Size(182, 23);
+            this.ToolStripMenuItemDataFromMemory.Size = new System.Drawing.Size(157, 20);
             this.ToolStripMenuItemDataFromMemory.Text = "Memóriában tárolt adatok";
             // 
             // ToolStripMenuItemDataFromDatabase
             // 
             this.ToolStripMenuItemDataFromDatabase.Name = "ToolStripMenuItemDataFromDatabase";
-            this.ToolStripMenuItemDataFromDatabase.Size = new System.Drawing.Size(186, 23);
+            this.ToolStripMenuItemDataFromDatabase.Size = new System.Drawing.Size(160, 20);
             this.ToolStripMenuItemDataFromDatabase.Text = "Adatbázisban tárolt adatok";
             // 
             // ToolStripMenuItemInformation
             // 
             this.ToolStripMenuItemInformation.Name = "ToolStripMenuItemInformation";
-            this.ToolStripMenuItemInformation.Size = new System.Drawing.Size(170, 23);
+            this.ToolStripMenuItemInformation.Size = new System.Drawing.Size(149, 20);
             this.ToolStripMenuItemInformation.Text = "Információ a programról";
+            this.ToolStripMenuItemInformation.Click += new System.EventHandler(this.ToolStripMenuItemInformation_Click);
             // 
             // ToolStripMenuItemExit
             // 
             this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
-            this.ToolStripMenuItemExit.Size = new System.Drawing.Size(63, 23);
+            this.ToolStripMenuItemExit.Size = new System.Drawing.Size(56, 20);
             this.ToolStripMenuItemExit.Text = "Kilépés";
             this.ToolStripMenuItemExit.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
