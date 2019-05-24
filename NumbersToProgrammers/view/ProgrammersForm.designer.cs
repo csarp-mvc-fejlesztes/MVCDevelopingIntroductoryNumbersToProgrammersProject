@@ -118,6 +118,7 @@
             this.buttonDeleteDataFromController.TabIndex = 10;
             this.buttonDeleteDataFromController.Text = "Töröl adatokat";
             this.buttonDeleteDataFromController.UseVisualStyleBackColor = true;
+            this.buttonDeleteDataFromController.Click += new System.EventHandler(this.buttonDeleteDataFromController_Click);
             // 
             // listBoxAdatok
             // 
