@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using ProgrammersProjekt.controller;
+using ProgrammersProjekt.modell;
 
 namespace ProgrammersProjekt
 {
@@ -92,6 +93,23 @@ namespace ProgrammersProjekt
         private void ToolStripMenuItemDataFromMemory_Click(object sender, EventArgs e)
         {
             programmersController.getProgrammersFromMemory();
+            updateControlerWithData();
+        }
+
+        /// <summary>
+        /// A kijelölt programozót töröljük
+        /// </summary>
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int index = listBoxProgrammersData.SelectedIndex;
+            if (index < 0)
+                return;
+
+            string idText = Programmer.getIdFromProgrammerString(listBoxProgrammersData.Text);
+            if (idText == string.Empty)
+                return;
+
+            programmersController.deleteProgrammer(idText);
             updateControlerWithData();
         }
     }
