@@ -127,6 +127,7 @@
             this.listBoxProgrammersData.Name = "listBoxProgrammersData";
             this.listBoxProgrammersData.Size = new System.Drawing.Size(717, 485);
             this.listBoxProgrammersData.TabIndex = 9;
+            this.listBoxProgrammersData.SelectedIndexChanged += new System.EventHandler(this.listBoxProgrammersData_SelectedIndexChanged);
             // 
             // labelVaros
             // 

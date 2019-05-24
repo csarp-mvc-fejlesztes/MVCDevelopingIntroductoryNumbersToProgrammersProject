@@ -153,5 +153,23 @@ namespace ProgrammersProjekt
                     checkBoxWebProgrammer.Checked = false;
             }
         }
+
+        /// <summary>
+        /// Másik programozóra kattintunk a listBox-ban akkor frissíteni kell az adatokat a vezérlőben
+        /// </summary>
+        private void listBoxProgrammersData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBoxProgrammersData.SelectedIndex;
+            if (index < 0)
+                return;
+
+            string idText = Programmer.getIdFromProgrammerString(listBoxProgrammersData.Text);
+            if (idText == string.Empty)
+                return;
+
+            Programmer p = programmersController.getProgrammerById(idText);
+            if (p != null)
+                showProgrammerInController(p);
+        }
     }
 }
