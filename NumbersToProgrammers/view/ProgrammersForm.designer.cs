@@ -34,7 +34,7 @@
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDeleteDataFromController = new System.Windows.Forms.Button();
-            this.listBoxAdatok = new System.Windows.Forms.ListBox();
+            this.listBoxProgrammersData = new System.Windows.Forms.ListBox();
             this.labelVaros = new System.Windows.Forms.Label();
             this.comboBoxCity = new System.Windows.Forms.ComboBox();
             this.buttonSaveToTextFile = new System.Windows.Forms.Button();
@@ -120,13 +120,13 @@
             this.buttonDeleteDataFromController.UseVisualStyleBackColor = true;
             this.buttonDeleteDataFromController.Click += new System.EventHandler(this.buttonDeleteDataFromController_Click);
             // 
-            // listBoxAdatok
+            // listBoxProgrammersData
             // 
-            this.listBoxAdatok.FormattingEnabled = true;
-            this.listBoxAdatok.Location = new System.Drawing.Point(6, 19);
-            this.listBoxAdatok.Name = "listBoxAdatok";
-            this.listBoxAdatok.Size = new System.Drawing.Size(717, 485);
-            this.listBoxAdatok.TabIndex = 9;
+            this.listBoxProgrammersData.FormattingEnabled = true;
+            this.listBoxProgrammersData.Location = new System.Drawing.Point(6, 19);
+            this.listBoxProgrammersData.Name = "listBoxProgrammersData";
+            this.listBoxProgrammersData.Size = new System.Drawing.Size(717, 485);
+            this.listBoxProgrammersData.TabIndex = 9;
             // 
             // labelVaros
             // 
@@ -253,6 +253,7 @@
             this.buttonReadDataFromMemory.TabIndex = 0;
             this.buttonReadDataFromMemory.Text = "Beolvas memóriában tárolt adatokat";
             this.buttonReadDataFromMemory.UseVisualStyleBackColor = true;
+            this.buttonReadDataFromMemory.Click += new System.EventHandler(this.buttonReadDataFromMemory_Click);
             // 
             // buttonDataToDatabase
             // 
@@ -337,7 +338,7 @@
             // 
             // groupBoxLista
             // 
-            this.groupBoxLista.Controls.Add(this.listBoxAdatok);
+            this.groupBoxLista.Controls.Add(this.listBoxProgrammersData);
             this.groupBoxLista.Location = new System.Drawing.Point(269, 27);
             this.groupBoxLista.Name = "groupBoxLista";
             this.groupBoxLista.Size = new System.Drawing.Size(727, 513);
@@ -419,7 +420,7 @@
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDeleteDataFromController;
-        private System.Windows.Forms.ListBox listBoxAdatok;
+        private System.Windows.Forms.ListBox listBoxProgrammersData;
         private System.Windows.Forms.ComboBox comboBoxCity;
         private System.Windows.Forms.Label labelVaros;
         private System.Windows.Forms.Button buttonSaveToTextFile;

@@ -60,5 +60,30 @@ namespace ProgrammersProjekt
         {
             clearProgrammerController();
         }
+
+        /// <summary>
+        /// Adatok frissítése a formon
+        /// </summary>
+        private void updateControlerWithData()
+        {
+            comboBoxCity.DataSource = null;
+            listBoxProgrammersData.DataSource = null;
+            clearProgrammerController();
+            if (programmersController.getProgrammers().Count != 0)
+            {
+                comboBoxCity.DataSource = programmersController.getCities();
+                listBoxProgrammersData.DataSource = programmersController.getProgrammers();
+            }
+            textBoxId.ReadOnly = true;
+        }
+
+        /// <summary>
+        /// Tesztadatok betöltés és megjelenítése
+        /// </summary>
+        private void buttonReadDataFromMemory_Click(object sender, EventArgs e)
+        {
+            programmersController.getProgrammersFromMemory();
+            updateControlerWithData();
+        }
     }
 }
