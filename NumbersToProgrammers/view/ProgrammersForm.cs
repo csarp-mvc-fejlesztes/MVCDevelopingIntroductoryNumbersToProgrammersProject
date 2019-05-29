@@ -177,7 +177,18 @@ namespace ProgrammersProjekt
         /// </summary>
         private void buttonModify_Click(object sender, EventArgs e)
         {
+            int index = listBoxProgrammersData.SelectedIndex;
+            if (index < 0)
+                return;
 
+            string id = textBoxId.Text;
+            string name = textBoxName.Text;
+            string age = textBoxAge.Text;
+            string city = comboBoxCity.Text;
+            bool man = radioButtonMan.Checked;
+            bool destopProgrammerProperies = checkBoxDesktopProgrammer.Checked;
+            bool gameProgrammerProperties = checkBoxGameProgrammer.Checked;
+            bool webProgrammerProperties = checkBoxWebProgrammer.Checked;
         }
     }
 }
