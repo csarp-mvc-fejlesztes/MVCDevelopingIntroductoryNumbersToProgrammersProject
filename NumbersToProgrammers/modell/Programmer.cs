@@ -51,6 +51,19 @@ namespace ProgrammersProjekt.modell
             this.gameProgrammer = gameProgrammer;
         }
 
+        public Programmer(int id, ProgrammerWithoutId pwid)
+        {
+            this.id = id;
+            this.name = pwid.getName();
+            this.age = pwid.getAge();
+            this.city = pwid.getCity();
+            this.gender = pwid.getGender();
+            this.desktopProgrammer = pwid.getDesktopProgrammerProperties();
+            this.webProgrammer = pwid.getWebProgrammerProperties();
+            this.gameProgrammer = pwid.getGameProgrammerProperties();
+        }
+
+
         public void setID(int id)
         {
             this.id = id;
