@@ -327,5 +327,13 @@ namespace ProgrammersProjekt.controller
             }
             return "";
         }
+        /// <summary>
+        /// Programozó következő ID-jének meghatározása
+        /// </summary>
+        /// <returns>Programozó következő ID-je</returns>
+        public int getNewProgrammerID()
+        {
+            return programmerRepository.getNewId();
+        }
     }
 }
