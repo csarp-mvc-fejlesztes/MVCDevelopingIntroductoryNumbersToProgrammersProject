@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProgrammersProjekt.modell
 {
-    class ProgrammerWithoutId
+    public class ProgrammerWithoutId
     {
         private string name;
         private int age;

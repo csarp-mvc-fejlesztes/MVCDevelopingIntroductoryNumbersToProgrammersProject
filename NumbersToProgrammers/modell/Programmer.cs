@@ -8,7 +8,7 @@ namespace ProgrammersProjekt.modell
 {
     public enum Gender { MAN, WOMAN }
 
-    class Programmer
+    public class Programmer
     {
         private int id;
         private string name;

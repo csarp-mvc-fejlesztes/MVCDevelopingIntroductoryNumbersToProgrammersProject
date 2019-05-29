@@ -71,5 +71,10 @@ namespace ProgrammersProjekt.view
             pwi.setGameProgrammerProperties(gameProgrammerProperties);
             pwi.setWebProgrammerProperties(webProgrammerProperties);
         }
+
+        public ProgrammerWithoutId getProgrammerWithoutId()
+        {
+            return pwi;
+        }
     }
 }
