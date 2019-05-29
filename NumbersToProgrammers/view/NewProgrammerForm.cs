@@ -39,5 +39,30 @@ namespace ProgrammersProjekt.view
             checkBoxWebProgrammer.Checked = false;
             comboBoxCity.DataSource = cities;
         }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            string name = textBoxName.Text;
+            string ageString = textBoxAge.Text;
+            string city = comboBoxCity.Text;
+            bool man = radioButtonMan.Checked;
+            bool destopProgrammerProperies = checkBoxDesktopProgrammer.Checked;
+            bool gameProgrammerProperties = checkBoxGameProgrammer.Checked;
+            bool webProgrammerProperties = checkBoxWebProgrammer.Checked;
+
+            
+            int age = Convert.ToInt32(ageString);
+            
+            pwi.setName(name);
+            pwi.setAge(age);
+            pwi.setCity(city);
+            if (man)
+                pwi.setMan();
+            else
+                pwi.setWoman();
+            pwi.setDesktopProgrammerProperies(destopProgrammerProperies);
+            pwi.setGameProgrammerProperties(gameProgrammerProperties);
+            pwi.setWebProgrammerProperties(webProgrammerProperties);
+        }
     }
 }
