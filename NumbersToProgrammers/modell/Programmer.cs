@@ -8,7 +8,7 @@ namespace ProgrammersProjekt.modell
 {
     public enum Gender { MAN, WOMAN }
 
-    class Programmer
+    public class Programmer
     {
         private int id;
         private string name;
@@ -50,6 +50,19 @@ namespace ProgrammersProjekt.modell
             this.webProgrammer = webProgrammer;
             this.gameProgrammer = gameProgrammer;
         }
+
+        public Programmer(int id, ProgrammerWithoutId pwid)
+        {
+            this.id = id;
+            this.name = pwid.getName();
+            this.age = pwid.getAge();
+            this.city = pwid.getCity();
+            this.gender = pwid.getGender();
+            this.desktopProgrammer = pwid.getDesktopProgrammerProperties();
+            this.webProgrammer = pwid.getWebProgrammerProperties();
+            this.gameProgrammer = pwid.getGameProgrammerProperties();
+        }
+
 
         public void setID(int id)
         {

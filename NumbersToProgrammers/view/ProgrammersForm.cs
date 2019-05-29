@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ProgrammersProjekt.controller;
 using ProgrammersProjekt.modell;
 using System.Diagnostics;
+using ProgrammersProjekt.view;
 
 namespace ProgrammersProjekt
 {
@@ -214,6 +215,33 @@ namespace ProgrammersProjekt
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Hozzáadás gomb
+        ///  - lekérjük a városokat
+        ///  - létrehozzuk a beszúró ürlapot és átadjuk neki a városokat
+        ///  - ha a beszúró ürlapon OK gombot nyom akkor:
+        ///        - a beszúró ürlaprók lekérjük a programozó adatait aminek még nincs ID-je
+        ///        - kérünk egy új ID-t a programozónak
+        ///        - létrehozzuk a programozót ID-vel
+        ///        - a controleren keresztül a programozót hozzáadjuk a repository-hoz
+        ///        - frissítjük a listBox-ban az adatokat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            List<string> cities = programmersController.getCities();
+            NewProgrammerForm npf = new NewProgrammerForm(cities);
+
+            if (npf.ShowDialog() == DialogResult.OK)
+            {
+                ProgrammerWithoutId pwid = npf.getProgrammerWithoutId();                
+                programmersController.addProgrammerToRepository(pwid);
+                listBoxProgrammersData.DataSource = null;
+                listBoxProgrammersData.DataSource = programmersController.getProgrammers();
             }
         }
     }

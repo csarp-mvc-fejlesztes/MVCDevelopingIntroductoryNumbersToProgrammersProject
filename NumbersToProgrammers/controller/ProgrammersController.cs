@@ -231,7 +231,7 @@ namespace ProgrammersProjekt.controller
             }
         }
 
-        /// <summary>
+               /// <summary>
         /// A viewn megadott adatot a repository segítségével módosítja
         /// </summary>
         /// <param name="stringIdOfModifydProgrammer">A sorszám, amely megadja, hogy hanyadik elemet kell változtatni</param>
@@ -326,6 +326,25 @@ namespace ProgrammersProjekt.controller
                 Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
             }
             return "";
+        }
+        /// <summary>
+        /// Programozó következő ID-jének meghatározása
+        /// </summary>
+        /// <returns>Programozó következő ID-je</returns>
+        public int getNewProgrammerID()
+        {
+            return programmerRepository.getNewId();
+        }
+
+        /// <summary>
+        /// Már létező Id nélküli programozó hozzáadása
+        /// </summary>
+        /// <param name="p"></param>
+        public void addProgrammerToRepository(ProgrammerWithoutId pwid)
+        {
+            int newProgrammerID = getNewProgrammerID();
+            Programmer p = new Programmer(newProgrammerID, pwid);
+            programmerRepository.add(p);
         }
     }
 }
