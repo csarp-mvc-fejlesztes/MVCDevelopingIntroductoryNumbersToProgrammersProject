@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using ProgrammersProjekt.modell;
 
 namespace ProgrammersProjekt.view
 {
@@ -14,11 +15,14 @@ namespace ProgrammersProjekt.view
     {
         //Akuális városok listája
         List<string> cities;
+        ///
+        ProgrammerWithoutId pwi;
 
         //Az új  programozó felviteli ablak fogadja a városok listáját
         public NewProgrammerForm(List<string> cities)
         {
             this.cities = cities;
+            pwi = new ProgrammerWithoutId();
             InitializeComponent();
         }
 
