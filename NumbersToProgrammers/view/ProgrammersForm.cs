@@ -171,5 +171,13 @@ namespace ProgrammersProjekt
             if (p != null)
                 showProgrammerInController(p);
         }
+
+        /// <summary>
+        /// A kijelölt programozó adatait módosítjuk a vezérlőkben megadott adatokkal
+        /// </summary>
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

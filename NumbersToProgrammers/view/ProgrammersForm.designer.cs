@@ -337,6 +337,7 @@
             this.buttonModify.TabIndex = 2;
             this.buttonModify.Text = "Módosítás";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // groupBoxLista
             // 
