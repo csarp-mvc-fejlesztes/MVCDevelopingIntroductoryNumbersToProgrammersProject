@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelNev = new System.Windows.Forms.Label();
             this.labelEletkor = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -61,11 +62,15 @@
             this.ToolStripMenuItemDataFromDatabase = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProviderModify = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxAdatfajlkezeles.SuspendLayout();
             this.groupBoxAdatok.SuspendLayout();
             this.groupBoxMűveletek.SuspendLayout();
             this.groupBoxLista.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModify)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNev
@@ -391,6 +396,14 @@
             this.ToolStripMenuItemExit.Text = "Kilépés";
             this.ToolStripMenuItemExit.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
+            // errorProviderModify
+            // 
+            this.errorProviderModify.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ProgrammerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +424,8 @@
             this.groupBoxLista.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModify)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,6 +466,8 @@
         private System.Windows.Forms.Label labelAzonosito;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Button buttonAddCity;
+        private System.Windows.Forms.ErrorProvider errorProviderModify;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

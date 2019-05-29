@@ -193,6 +193,7 @@ namespace ProgrammersProjekt
 
             try
             {
+                errorProviderModify.Clear();
                 programmersController.modifyProgrammer(
                     id,
                     name,
@@ -207,8 +208,8 @@ namespace ProgrammersProjekt
                 listBoxProgrammersData.SelectedIndex = index;
             }
             catch (ControllerException ce)
-            { 
-            
+            {
+                errorProviderModify.SetError(buttonModify, ce.Message);
             }
             catch (Exception ex)
             {
