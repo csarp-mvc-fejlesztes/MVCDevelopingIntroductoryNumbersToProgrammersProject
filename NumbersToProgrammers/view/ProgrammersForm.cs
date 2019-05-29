@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using ProgrammersProjekt.controller;
 using ProgrammersProjekt.modell;
+using System.Diagnostics;
 
 namespace ProgrammersProjekt
 {
@@ -170,6 +171,50 @@ namespace ProgrammersProjekt
             Programmer p = programmersController.getProgrammerById(idText);
             if (p != null)
                 showProgrammerInController(p);
+        }
+
+        /// <summary>
+        /// A kijelölt programozó adatait módosítjuk a vezérlőkben megadott adatokkal
+        /// </summary>
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            int index = listBoxProgrammersData.SelectedIndex;
+            if (index < 0)
+                return;
+
+            string id = textBoxId.Text;
+            string name = textBoxName.Text;
+            string age = textBoxAge.Text;
+            string city = comboBoxCity.Text;
+            bool man = radioButtonMan.Checked;
+            bool destopProgrammerProperies = checkBoxDesktopProgrammer.Checked;
+            bool gameProgrammerProperties = checkBoxGameProgrammer.Checked;
+            bool webProgrammerProperties = checkBoxWebProgrammer.Checked;
+
+            try
+            {
+                errorProviderModify.Clear();
+                programmersController.modifyProgrammer(
+                    id,
+                    name,
+                    age,
+                    city,
+                    man,
+                    destopProgrammerProperies,
+                    webProgrammerProperties,
+                    gameProgrammerProperties
+                    );
+                updateControlerWithData();
+                listBoxProgrammersData.SelectedIndex = index;
+            }
+            catch (ControllerException ce)
+            {
+                errorProviderModify.SetError(buttonModify, ce.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
     }
 }
