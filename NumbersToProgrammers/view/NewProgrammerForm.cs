@@ -12,8 +12,13 @@ namespace ProgrammersProjekt.view
 {
     public partial class NewProgrammerForm : Form
     {
-        public NewProgrammerForm()
-        {    
+        //Akuális városok listája
+        List<string> cities;
+
+        //Az új  programozó felviteli ablak fogadja a városok listáját
+        public NewProgrammerForm(List<string> cities)
+        {
+            this.cities = cities;
             InitializeComponent();
         }
     }
