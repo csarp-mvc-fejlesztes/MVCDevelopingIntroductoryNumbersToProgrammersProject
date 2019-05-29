@@ -238,10 +238,8 @@ namespace ProgrammersProjekt
 
             if (npf.ShowDialog() == DialogResult.OK)
             {
-                ProgrammerWithoutId pwid = npf.getProgrammerWithoutId();
-                int newProgrammerID = programmersController.getNewProgrammerID();
-                Programmer p = new Programmer(newProgrammerID, pwid);
-                programmersController.addProgrammerToRepository(p);
+                ProgrammerWithoutId pwid = npf.getProgrammerWithoutId();                
+                programmersController.addProgrammerToRepository(pwid);
                 listBoxProgrammersData.DataSource = null;
                 listBoxProgrammersData.DataSource = programmersController.getProgrammers();
             }
