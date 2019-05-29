@@ -114,6 +114,7 @@
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Hozzáadás";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonDeleteDataFromController
             // 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProgrammersProjekt.view
 {
-    public partial class NewDataForm : Form
+    public partial class NewProgrammerForm : Form
     {
-        public NewDataForm()
+        public NewProgrammerForm()
         {    
             InitializeComponent();
         }

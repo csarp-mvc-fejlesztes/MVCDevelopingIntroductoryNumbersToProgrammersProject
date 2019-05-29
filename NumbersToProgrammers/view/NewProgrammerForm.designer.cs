@@ -1,6 +1,6 @@
 ﻿namespace ProgrammersProjekt.view
 {
-    partial class NewDataForm
+    partial class NewProgrammerForm
     {
         /// <summary>
         /// Required designer variable.
