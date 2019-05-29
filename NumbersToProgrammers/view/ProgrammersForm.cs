@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using ProgrammersProjekt.controller;
 using ProgrammersProjekt.modell;
+using System.Diagnostics;
 
 namespace ProgrammersProjekt
 {
@@ -189,6 +190,30 @@ namespace ProgrammersProjekt
             bool destopProgrammerProperies = checkBoxDesktopProgrammer.Checked;
             bool gameProgrammerProperties = checkBoxGameProgrammer.Checked;
             bool webProgrammerProperties = checkBoxWebProgrammer.Checked;
+
+            try
+            {
+                programmersController.modifyProgrammer(
+                    id,
+                    name,
+                    age,
+                    city,
+                    man,
+                    destopProgrammerProperies,
+                    webProgrammerProperties,
+                    gameProgrammerProperties
+                    );
+                updateControlerWithData();
+                listBoxProgrammersData.SelectedIndex = index;
+            }
+            catch (ControllerException ce)
+            { 
+            
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
     }
 }
