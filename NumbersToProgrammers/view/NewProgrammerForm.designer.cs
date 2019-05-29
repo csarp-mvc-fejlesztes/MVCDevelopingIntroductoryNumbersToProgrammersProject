@@ -33,7 +33,7 @@
             this.labelNev = new System.Windows.Forms.Label();
             this.buttonDeteleDataFromControl = new System.Windows.Forms.Button();
             this.labelNem = new System.Windows.Forms.Label();
-            this.radioButtonAge = new System.Windows.Forms.RadioButton();
+            this.radioButtonWoman = new System.Windows.Forms.RadioButton();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.radioButtonMan = new System.Windows.Forms.RadioButton();
             this.checkBoxGameProgrammer = new System.Windows.Forms.CheckBox();
@@ -55,7 +55,7 @@
             this.groupBoxAdatok.Controls.Add(this.labelNev);
             this.groupBoxAdatok.Controls.Add(this.buttonDeteleDataFromControl);
             this.groupBoxAdatok.Controls.Add(this.labelNem);
-            this.groupBoxAdatok.Controls.Add(this.radioButtonAge);
+            this.groupBoxAdatok.Controls.Add(this.radioButtonWoman);
             this.groupBoxAdatok.Controls.Add(this.textBoxAge);
             this.groupBoxAdatok.Controls.Add(this.radioButtonMan);
             this.groupBoxAdatok.Controls.Add(this.checkBoxGameProgrammer);
@@ -109,16 +109,16 @@
             this.labelNem.TabIndex = 4;
             this.labelNem.Text = "Nem";
             // 
-            // radioButtonAge
+            // radioButtonWoman
             // 
-            this.radioButtonAge.AutoSize = true;
-            this.radioButtonAge.Location = new System.Drawing.Point(151, 119);
-            this.radioButtonAge.Name = "radioButtonAge";
-            this.radioButtonAge.Size = new System.Drawing.Size(37, 17);
-            this.radioButtonAge.TabIndex = 6;
-            this.radioButtonAge.TabStop = true;
-            this.radioButtonAge.Text = "nő";
-            this.radioButtonAge.UseVisualStyleBackColor = true;
+            this.radioButtonWoman.AutoSize = true;
+            this.radioButtonWoman.Location = new System.Drawing.Point(151, 119);
+            this.radioButtonWoman.Name = "radioButtonWoman";
+            this.radioButtonWoman.Size = new System.Drawing.Size(37, 17);
+            this.radioButtonWoman.TabIndex = 6;
+            this.radioButtonWoman.TabStop = true;
+            this.radioButtonWoman.Text = "nő";
+            this.radioButtonWoman.UseVisualStyleBackColor = true;
             // 
             // textBoxAge
             // 
@@ -231,7 +231,7 @@
             this.buttonMegseg.Text = "Mégsem";
             this.buttonMegseg.UseVisualStyleBackColor = true;
             // 
-            // NewDataForm
+            // NewProgrammerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,8 +239,9 @@
             this.Controls.Add(this.buttonMegseg);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxAdatok);
-            this.Name = "NewDataForm";
+            this.Name = "NewProgrammerForm";
             this.Text = "Új adatfelvitel";
+            this.Load += new System.EventHandler(this.NewProgrammerForm_Load);
             this.groupBoxAdatok.ResumeLayout(false);
             this.groupBoxAdatok.PerformLayout();
             this.ResumeLayout(false);
@@ -254,7 +255,7 @@
         private System.Windows.Forms.Label labelNev;
         private System.Windows.Forms.Button buttonDeteleDataFromControl;
         private System.Windows.Forms.Label labelNem;
-        private System.Windows.Forms.RadioButton radioButtonAge;
+        private System.Windows.Forms.RadioButton radioButtonWoman;
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.RadioButton radioButtonMan;
         private System.Windows.Forms.CheckBox checkBoxGameProgrammer;

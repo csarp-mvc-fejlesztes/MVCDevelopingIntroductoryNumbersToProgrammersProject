@@ -21,5 +21,19 @@ namespace ProgrammersProjekt.view
             this.cities = cities;
             InitializeComponent();
         }
+
+
+        private void NewProgrammerForm_Load(object sender, EventArgs e)
+        {
+            textBoxName.Text = string.Empty;
+            textBoxAge.Text = string.Empty;
+            comboBoxCity.Text = string.Empty;
+            radioButtonMan.Checked = true;
+            radioButtonWoman.Checked = false;
+            checkBoxDesktopProgrammer.Checked = false;
+            checkBoxGameProgrammer.Checked = false;
+            checkBoxWebProgrammer.Checked = false;
+            comboBoxCity.DataSource = cities;
+        }
     }
 }
