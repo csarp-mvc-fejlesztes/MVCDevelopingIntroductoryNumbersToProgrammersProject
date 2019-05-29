@@ -50,9 +50,16 @@ namespace ProgrammersProjekt.view
             bool gameProgrammerProperties = checkBoxGameProgrammer.Checked;
             bool webProgrammerProperties = checkBoxWebProgrammer.Checked;
 
-            
-            int age = Convert.ToInt32(ageString);
-            
+            int age = -1;
+            try
+            {
+                age = Convert.ToInt32(ageString);
+            }
+            catch (Exception)
+            {
+                this.DialogResult = DialogResult.None;
+            }
+
             pwi.setName(name);
             pwi.setAge(age);
             pwi.setCity(city);
